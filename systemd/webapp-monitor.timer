@@ -1,0 +1,19 @@
+# =============================================================================
+# Systemd таймер для периодического запуска мониторинга
+# Запускает webapp-monitor.service каждые N секунд
+# =============================================================================
+
+[Unit]
+Description=Run Web Application Health Monitor periodically
+
+[Timer]
+OnBootSec=30s
+
+OnUnitActiveSec=30s
+
+AccuracySec=1s
+
+Unit=webapp-monitor.service
+
+[Install]
+WantedBy=timers.target

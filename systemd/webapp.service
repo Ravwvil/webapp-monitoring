@@ -1,0 +1,26 @@
+# =============================================================================
+# Systemd сервис для веб-приложения
+# Автоматически запускает приложение при старте системы
+# =============================================================================
+
+[Unit]
+Description=Hello World Web Application
+After=network.target
+
+[Service]
+Type=simple
+
+WorkingDirectory=/opt/webapp-monitoring/app
+
+ExecStart=/opt/webapp-monitoring/app/webapp
+
+Environment=APP_PORT=8080
+
+Restart=on-failure
+RestartSec=5
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

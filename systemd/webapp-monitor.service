@@ -1,0 +1,16 @@
+# =============================================================================
+# Systemd сервис для скрипта мониторинга
+# Запускается по таймеру для проверки здоровья приложения
+# =============================================================================
+
+[Unit]
+Description=Web Application Health Monitor
+Wants=webapp.service
+
+[Service]
+Type=oneshot
+
+ExecStart=/opt/webapp-monitoring/scripts/monitor.sh
+
+StandardOutput=journal
+StandardError=journal
