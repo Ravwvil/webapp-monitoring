@@ -37,7 +37,7 @@
 
 ```bash
 # Клонируйте репозиторий
-git clone 
+git clone https://github.com/Ravwvil/webapp-monitoring
 cd webapp-monitoring
 
 # Запустите установку
